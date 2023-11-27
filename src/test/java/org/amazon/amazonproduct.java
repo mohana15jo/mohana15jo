@@ -42,6 +42,8 @@ public class amazonproduct extends BaseClass{
 		System.out.println("The mobile prize is: "+prize);
 	*/
 		
+		//its me aaru hi i am not a soft girl i am a ruggered girl....
+		System.out.println("Aarthi code");
 		
 		browser_launch();
 		passurl("https://www.flipkart.com/");

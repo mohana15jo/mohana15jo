@@ -15,7 +15,11 @@ import java.util.concurrent.TimeUnit;
 
 
 import org.apache.commons.io.FileUtils;
-
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -522,7 +526,7 @@ public class BaseClass {
 		FileInputStream fin =new FileInputStream(f);
 		
 		//3.type of workbook
-		Workbook w=new XSSFWorkbook(fin);
+		XSSFWorkbook w=new XSSFWorkbook(fin);
 		//4.sheet
 		Sheet s=w.getSheet(sh);
 
@@ -576,17 +580,18 @@ public class BaseClass {
 		
 	}
 	
-	public static WebElement get_Text(List<WebElelemnet> mobile2)
+	public static WebElement get_Text(List<WebElement> mobile2)
 	{
-		WebElement mobile;
+		WebElement mobile = null;
 		String text;
 		List<WebElement> m=new LinkedList<WebElement>();
-		m.add(mobile2);
+		m.add((WebElement) mobile2);
 		for(int i=0;i<m.size();i++) {
 			mobile=m.get(i);
 			System.out.println(mobile.getText());
 		//return text;
 		}
+		return mobile;
 	
 	
 	}
